@@ -7,6 +7,12 @@
 {{ 'slick.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'jquery-3.7.1.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+<script>
+    console.log('prod init')
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('done')
+    })
+</script>
 
 {% schema %}
 {
@@ -23,8 +29,16 @@
   ],
   "blocks": [
     {
-      "type": "Product",
-      "name": "Proposal product"
+      "type": "product",
+      "name": "Proposal producttt",
+      "settings": [
+        {
+            "type": "product",
+            "id": "Proposal_product",
+            "label": "Our proposal product"
+        }
+
+      ]
     }
   ],
   "presets": [
